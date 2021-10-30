@@ -1,0 +1,349 @@
+<Container maxWidth='md' spacing={2}>
+      <br /><br />
+      <Stepper
+        activeStep={2}
+        alternativeLabel
+        style={{ backgroundColor: 'transparent' }}
+      >
+        {steps.map((label) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
+      </Stepper>
+
+      <Grid container spacing={4} clasName='flex-mobile'>
+        <Grid item xs={12} sm={8} className='gridper_left'>
+          <Typography variant='h5' align='left' lineHeight={1}>
+            Ringkasan Data
+          </Typography>
+          <Typography
+            variant='subtitle1'
+            align='left'
+            lineHeight={1}
+            component='h6'
+          >
+            Harap konfirmasikan detail anda sebelum lanjut ke Pembayaran
+          </Typography>
+          <hr className='hrx' />
+
+          <div style={{fontFamily: "Arial"}}>
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Nama Paket :</Typography> 
+              <Typography variant="subtitle1"><strong> Plan  { formData.type_paket }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Merk & Tipe Sepeda :</Typography> 
+              <Typography variant="subtitle1"><strong> { formData.type_sepeda  }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Tanggal Mulai :</Typography> 
+              <Typography variant="subtitle1"><strong> { tgl_awalp.replaceAll('/', '-') }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Tanggal Akhir :</Typography> 
+              <Typography variant="subtitle1"><strong> { tanggalAkhir.replaceAll('/', '-') }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Nama Lengkap :</Typography> 
+              <Typography variant="subtitle1"><strong> { nama }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Jenis Kelamin :</Typography> 
+              <Typography variant="subtitle1"><strong> {type_kelamin === 'Male'
+                ? 'Pria'
+                : type_kelamin === 'Female'
+                ? 'Wanita'
+                : '' }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Jenis ID :</Typography> 
+              <Typography variant="subtitle1"><strong> { type_id === 1
+                ? 'KTP'
+                : type_id === 2
+                ? 'SIM'
+                : type_id === 3
+                ? 'Passport'
+                : '' }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>No ID :</Typography> 
+              <Typography variant="subtitle1"><strong> { no_id }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Tanggal Lahir:</Typography> 
+              <Typography variant="subtitle1"><strong> { tgl_lahir }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>Email:</Typography> 
+              <Typography variant="subtitle1"><strong> { formData.almt_email  }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+
+              <Typography variant="subtitle1" style={{ color: '#ffc20f' }}>No Telepon:</Typography> 
+              <Typography variant="subtitle1"><strong> { phone  }</strong></Typography> 
+              <Typography style={{ padding: '5px' }}></Typography>
+          </div>
+          <br />
+
+      <div className='hide-mobile'>
+         <Typography variant='h6' align='left' lineHeight={1}>
+            Penyataan
+          </Typography>
+          <FormControl style={{ margin: '2px' }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color='secondary'
+                  name='saveAddress'
+                  value='yes'
+                  style ={{
+                    color: "#ffc20f",
+                  }}
+                  onChange={() => setCheck1(!check1)}
+                />
+              }
+              label={labelzzzz}
+            />
+          </FormControl>
+          <FormControl style={{ margin: '2px' }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color='secondary'
+                  name='saveAddress'
+                  value='yes'
+                  style ={{
+                    color: "#ffc20f",
+                  }}
+                  onChange={() => setCheck2(!check2)}
+                />
+              }
+              label='Anda secara tegas dan menyadari akan Persetujuan Undang-undang perlindungan Data Pribadi bahwa kami dan/atau pihak eksternal memproses data personal Anda untuk promosi dan pemasaran'
+            />
+          </FormControl>
+          <br /><br /><br />
+          <div>
+              <Button
+                fullWidth
+                className="back_buttonbeli"
+                style={{
+                  resizeMode: 'cover',
+                  padding: '8px',
+                  margin: '0',
+                  width: '100%',
+                  height: '50px',
+                  bottom: '0',
+                  fontSize: '20px',
+                }}
+                onClick={handleClick}
+                disabled={!check1 || !check2}
+              >
+              </Button>
+          </div>
+      </div>  
+
+    </Grid>
+
+        <Grid item xs={12} xs={4} className='gridper_right'>
+          <Typography variant='h6' align='left' style={{fontFamily: "Arial" }}>
+            {' '}
+            Ringkasan Transaksi{' '}
+          </Typography>
+          <hr className='hrx' />
+
+          <Grid item align='center' style={{ backgroundColor: '#000000', position: 'center' }}>
+            <Typography variant='h6' align='center' gutterBottom>
+              <strong style={{ color: '#ffffff' }}> Total Pembayaran </strong>
+            </Typography>
+            <Typography variant='h3' align='center' gutterBottom>
+               <strong style={{ color: '#ffffff' }}>
+                  Rp.{' '}
+                  {detailQuotes && detailQuotes.total_payable ? convert(detailQuotes.total_payable) : 0}
+                </strong>
+            </Typography>
+          </Grid>
+          <br />
+          <Grid item align='center' style={{ position: 'center' }}>
+            <Typography variant='body2' gutterBottom>
+              <p align='left'>
+                Gross Premi{' '}
+                <span style={{ float: 'right' }}>
+                    {' '}
+                    <strong>
+                      Rp{' '}
+                      {detailQuotes && detailQuotes.total_premium ? convert(detailQuotes.total_premium) : 0}
+                    </strong>
+                  </span>
+              </p>
+            </Typography>
+            <hr className='hrx' />
+            <Typography variant='body2' gutterBottom>
+              <p align='left'>
+                Total Biaya Polis{' '}
+                <span style={{ float: 'right' }}>
+                    <strong> Rp{' '} {detailQuotes && detailQuotes.total_admin_fee ? convert(detailQuotes.total_admin_fee) : 0} </strong>
+                  </span>
+              </p>
+            </Typography>
+            <hr className='hrx' />
+            <Typography variant='body2' gutterBottom>
+              <p align='left'>
+                Nilai Pertangungan{' '}
+                <span style={{ float: 'right' }}>
+                    {' '}
+                    <strong>
+                      Rp{' '}
+                      {type_paket == 1
+                        ? '2.000.000,- '
+                        : type_paket == 2
+                        ? '5.000.000,- '
+                        : 0}
+                    </strong>
+                  </span>
+              </p>
+            </Typography>
+            <hr className='hrx' />
+            <br />
+
+            <Typography align='left' variant='body1' gutterBottom>
+              <strong>Jaminan </strong>
+            </Typography>
+            <Typography style={{ padding: '10px' }}></Typography>
+            <Grid container direction='row' alignItems='left' justify='left'>
+              <Grid item>
+                <img
+                  mx='auto'
+                  p={3}
+                  m={-6}
+                  width={20}
+                  height={20}
+                  src={require('../assets/check_icon.png')}
+                />
+              </Grid>
+              <Typography align='left' variant='body2' gutterBottom>
+                {' '}
+                <strong> &nbsp; Kematian dan cacat tetap </strong>
+              </Typography>
+            </Grid>
+            <Typography style={{ padding: '10px' }}></Typography>
+
+            <Grid container direction='row' alignItems='left' justify='left'>
+              <Grid item>
+                <img
+                  mx='auto'
+                  p={3}
+                  m={-6}
+                  width={20}
+                  height={20}
+                  src={require('../assets/check_icon.png')}
+                />
+              </Grid>
+              <Typography align='left' variant='body2' gutterBottom>
+                <strong> &nbsp; Biaya Perawatan medis </strong>
+              </Typography>
+            </Grid>
+            <Typography style={{ padding: '10px' }}></Typography>
+            <br />
+            <Typography align='left' variant='body1' gutterBottom>
+              <strong>Periode Asuransi </strong>
+            </Typography>
+            <Typography variant='body2' gutterBottom>
+              <p align='left'>
+                Tanggal Mulai{' '}
+                <span style={{ float: 'right' }}>
+                  {' '}
+                  <strong> {tgl_awalp} </strong>
+                </span>
+              </p>
+            </Typography>
+            <hr className='hrx' />
+            <Typography variant='body2' gutterBottom>
+              <p align='left'>
+                Tanggal Akhir{' '}
+                <span style={{ float: 'right' }}>
+                  {' '}
+                  <strong> {tanggalAkhir.replaceAll('/', '-')} </strong>
+                </span>
+              </p>
+            </Typography>
+            <hr className='hrx' />
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <div className='show-mobile'>
+         <Typography variant='h6' align='left' lineHeight={1}>
+            Penyataan
+          </Typography>
+          <FormControl style={{ margin: '2px' }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color='secondary'
+                  name='saveAddress'
+                  value='yes'
+                  style ={{
+                    color: "#ffc20f",
+                  }}
+                  onChange={() => setCheck1(!check1)}
+                />
+              }
+              label={labelzzzz}
+              // label= {
+              //   <div>
+              //      <span>Saya telah membaca dan menyetujui </span>
+              //      <Link to={'../assets/PA-Cyclist-EtiQa.pdf'}>Lembar Keterangan Produk</Link>
+              //   </div>
+              //   }
+            />
+          </FormControl>
+          <FormControl style={{ margin: '2px' }}>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  color='secondary'
+                  name='saveAddress'
+                  value='yes'
+                  style ={{
+                    color: "#ffc20f",
+                  }}
+                  onChange={() => setCheck2(!check2)}
+                />
+              }
+              label='Anda secara tegas dan menyadari akan Persetujuan Undang-undang perlindungan Data Pribadi bahwa Kami dan/atau pihak eksternal memproses data personal Anda untuk promosi dan pemasaran'
+            />
+          </FormControl>
+          <br /><br /> <br />
+          <div>
+
+            <Button
+                fullWidth
+                className="back_buttonbeli"
+                style={{
+                  resizeMode: 'cover',
+                  padding: '8px',
+                  margin: '0',
+                  width: '100%',
+                  height: '50px',
+                  bottom: '0',
+                  fontSize: '20px',
+                }}
+                onClick={handleClick}
+                disabled={!check1 || !check2}
+              >
+              </Button>
+
+              {/* <Button
+                fullWidth
+                //color='primary'
+                variant='contained'
+                style={{ marginTop: '1.5rem' }}
+                onClick={handleClick}
+                style={{ backgroundColor: '#000000', color: '#ffffff' }}
+                disabled={!check1 || !check2}
+              >
+                Pesan Sekarang
+              </Button> */}
+          </div>
+      </div>  
+
+    </Container>

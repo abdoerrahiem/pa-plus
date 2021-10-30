@@ -1,0 +1,16 @@
+.result {
+  /* background: red; */
+  width: 100vw;
+  height: 100vh;
+  margin-top: 3rem;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transaction {
+  margin-top: 1.5rem;
+}

@@ -1,0 +1,35 @@
+{
+  "asuransi": [],
+  "customers": [],
+  "transactions": [
+    {
+      "id": 1,
+      "nomorPolis": "1010110121000206",
+      "nomorInvois": "211101-00013633-UAT9",
+      "date": "2021-03-12T09:56:46",
+      "jumlah": 50000,
+      "jenisPembayaran": "cimb_clicks",
+      "transaksiId": "504b7407-3623-433a-b7cc-d7ca2d54ecad"
+    }
+  ],
+  "vouchers": [
+    {
+      "id": 1,
+      "voucher": "12345",
+      "percentage": 10,
+      "finalPrice": 200000
+    },
+    {
+      "id": 2,
+      "voucher": "67890",
+      "percentage": 15,
+      "finalPrice": 100000
+    },
+    {
+      "id": 3,
+      "voucher": "22222",
+      "percentage": 20,
+      "finalPrice": 50000
+    }
+  ]
+}

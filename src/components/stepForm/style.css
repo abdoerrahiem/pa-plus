@@ -1,0 +1,764 @@
+.hrx {
+  border: 0;
+  height: 1px;
+  background: #333;
+  opacity: 0.3;
+  /* background-image: linear-gradient(to right, #ccc, #333, #ccc); */
+}
+
+.jrk_input {
+  margin-bottom: 50px;
+}
+
+.backleft {
+  background: url(../assets/banner-01.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.backringkasan {
+  background: url(../assets/background_ringkasan.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: auto;
+}
+
+.back_buttonbeli {
+  background: url(../assets/btn_beli_normal.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.back_buttonkembali {
+  background: url(../assets/desktop_button_kembali.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.back_buttonlanjut {
+  background: url(../assets/desktop_button_lanjut.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+
+.gridper_left {
+  background-color: #ffffff;
+}
+
+.gridper_right {
+  background-color: #ffc20f;
+}
+
+.paket-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.paket-modal > div {
+  background: #fff;
+  height: 320px;
+  width: 320px;
+  border-radius: 5px;
+  position: relative;
+  border: 2px solid #fff;
+}
+
+.paket-modal .button {
+  margin: 1rem;
+  width: 120px;
+}
+
+.loading-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-modal > div {
+  background: #fff;
+  height: 135px;
+  width: 261px;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-modal .button {
+  margin: 1rem;
+  width: 120px;
+}
+
+.error-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-modal > div {
+  background: #f6f6f6;
+  height: 185px;
+  width: 265px;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-modal .button {
+  margin: 1rem;
+  width: 120px;
+}
+
+.show-mobile {
+  margin-top: 2rem !important;
+  display: none !important;
+}
+
+.show-mobile-personal {
+  display: none !important;
+}
+
+.fnt_arial {
+  font-family: Arial;
+}
+
+@media only screen and (max-width: 650px) {
+  .backleft {
+    background: url(../assets/mobile_background.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 10rem !important;
+  }
+
+  .back_buttonbeli {
+    background: url(../assets/btn_beli_normal.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    position: relative;
+    max-width: 100%;
+    display: block;
+  }
+
+  .back_buttonkembali {
+    background: url(../assets/desktop_button_kembali.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    max-width: 100%;
+    height: 45px;
+    margin: 0 auto 0 auto; /* Centred */
+    position: relative;
+    display: block;
+  }
+
+  .back_buttonlanjut {
+    background: url(../assets/desktop_button_lanjut.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    position: relative;
+    margin: 0 auto 0 auto; /* Centred */
+    height: 45px;
+    max-width: 100%;
+    display: block;
+  }
+
+  .gridper_left {
+    background-color: #ffffff;
+    max-width: 100% !important;
+    flex-grow: 1 !important;
+  }
+
+  .gridper_right {
+    background-color: #ffc20f;
+    max-width: 100% !important;
+    flex-grow: 1 !important;
+  }
+
+  .grdbottom {
+    display: none;
+  }
+
+  .flex-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show-mobile {
+    display: block !important;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile-personal {
+    width: auto;
+    display: flex !important;
+  }
+}
+
+.buy-now-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: none;
+  height: 70px;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.buy-now-button img {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 830px) {
+  .buy-now-button {
+    background-size: contain;
+    position: relative;
+    height: 50px;
+  }
+}
+
+.benefit-plus {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.benefit-plus img {
+  margin-right: 15px;
+}
+
+.free-benefit {
+  border: 2px solid #000;
+  padding: 10px;
+}
+
+.free-benefit img {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.benefit-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .backleft {
+    background: none;
+    padding: 0;
+  }
+
+  .right-grid {
+    display: none;
+  }
+
+  .benefit-mobile {
+    display: block;
+  }
+}
+
+.slogan {
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: 'center';
+  align-items: 'center';
+  margin-top: '50px';
+  margin-bottom: '30px';
+}
+
+.ringkasan > div {
+  background-image: url(../assets/banner-02.png);
+  background-size: cover;
+  padding: 30px 25px 130px 25px;
+}
+
+.ringkasan > p {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ringkasan > div {
+    padding: 0px;
+  }
+}
+
+.total-pembayaran {
+  background-color: #000;
+  padding: 20px;
+}
+
+.total-pembayaran p:first-child {
+  color: #fff;
+}
+
+.total-pembayaran p:nth-child(2) {
+  color: #ffc20f;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.nilai-premi {
+  border-bottom: 1px solid rgb(112, 112, 112);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3px;
+  margin: 40px 0 20px 0;
+}
+
+.nilai-premi p,
+.nilai-pertanggungan > p,
+.nilai-pertanggungan-content > p {
+  font-weight: bold;
+}
+
+.nilai-pertanggungan-content i {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.nilai-pertanggungan-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(112, 112, 112);
+  margin-bottom: 20px;
+}
+
+.nilai-pertanggungan-content > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.nilai-pertanggungan-content > div p {
+  margin-top: -5px;
+}
+
+.nilai-pertanggungan > p {
+  margin-bottom: 15px;
+}
+
+.jaminan {
+  margin: 30px 0;
+}
+
+.jaminan > p,
+.periode-asuransi > p {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.jaminan-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.jaminan-content img {
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+
+.jaminan-content p {
+  margin-top: -15px;
+}
+
+.periode-asuransi > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.periode-asuransi > div p:nth-child(2) {
+  font-weight: bold;
+}
+
+.personal-form {
+  background: #fff;
+  padding: 50px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.personal-form-control {
+  margin-bottom: 30px !important;
+}
+
+.personal-form-buttons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+}
+
+.personal-form-buttons button {
+  height: 65px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.personal-form-buttons button:first-child {
+  background-image: url(../assets/desktop_button_kembali.png);
+}
+
+.personal-form-buttons button:nth-child(2) {
+  background-image: url(../assets/desktop_button_lanjut.png);
+}
+
+@media only screen and (max-width: 600px) {
+  .personal-form-buttons button:first-child {
+    background-image: url(../assets/[mobile]\ button-kembali-hover.png);
+  }
+
+  .personal-form-buttons button:nth-child(2) {
+    background-image: url(../assets/[mobile]\ button-lanjut_Normal.png);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .personal-form-buttons button {
+    height: 40px;
+  }
+
+  .personal-form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.ringkasan-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 864px) {
+  /* .personal-grid-2 {
+    border-left: none !important;
+    padding-left: 0px !important;
+    display: none;
+  }
+
+  .personal-grid-1 {
+    padding-right: 0px !important;
+  } */
+
+  .personal-grid-2 {
+    display: none;
+  }
+
+  .ringkasan-mobile {
+    display: block;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.progressBar li {
+  list-style-type: none;
+  float: left;
+  width: 45%;
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.progressBar li p {
+  font-weight: bold;
+}
+
+.progressBar li:before {
+  content: ' ';
+  line-height: 20px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.progressBar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  top: 10px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressBar li:first-child:after {
+  content: none;
+}
+
+.progressBar li.active {
+  color: #ffc20f;
+}
+
+.progressBar li.active:before {
+  border-color: #000;
+  background-color: #ffc20f;
+}
+
+.progressBar li.active + li:after {
+  border-color: #000;
+  background-color: #000;
+}
+
+/* Review page */
+.review-container {
+  margin-top: 20px;
+}
+
+.review-grid-1 {
+  padding-right: 20px;
+  padding-top: 20px;
+}
+
+.review-grid-2 {
+  border-left: 1px solid #ccc;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.review-form {
+  background-color: #fff;
+  padding: 10px 30px 80px 30px;
+  position: relative;
+}
+
+.review-form-data {
+  margin-bottom: 10px;
+}
+
+.review-form-data > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-form-data > div p {
+  font-family: Roboto, sans-serif;
+  margin: 13.5px 0;
+}
+
+.review-form-data > div p:first-child {
+  color: #ffc20f;
+}
+
+.review-form-data > div p:nth-child(2) {
+  font-weight: bold;
+}
+
+.review-form-pernyataan h6 {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 864px) {
+  .review-grid-2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .review-form {
+    padding: 15px 10px 100px 10px;
+  }
+
+  .review-form-data > div p {
+    font-size: 14px;
+  }
+
+  .review-form-pernyataan span {
+    font-size: 14px;
+  }
+}
+
+.modal-buttons {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-buttons button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 18px 18px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background-color: #000;
+  color: #fff;
+  border-bottom-left-radius: 5px;
+}
+
+.modal-buttons button:nth-child(2) {
+  background-color: #ffc20f;
+  border-bottom-right-radius: 5px;
+}
+
+.modal-buttons button span {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0px 5px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.modal-content h2,
+.modal-content h5,
+.modal-content h6 {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.modal-content h5 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.modal-content h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-content h6 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.modal-content h6:nth-child(1) {
+  font-size: 20px;
+}
+
+.button-bayar {
+  background-color: #000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.button-bayar span {
+  color: #ffc20f;
+  margin-right: 15px;
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+.button-bayar svg {
+  color: #ffc20f;
+  font-size: 30px;
+}
+
+.pop-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pop-up > div {
+  position: relative;
+}
+
+.pop-up img {
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.pop-up .pop-up__button {
+  background-color: #ffc20f;
+  color: #fff;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+
+@media only screen and (min-width: 600px) {
+  .pop-up img {
+    height: 600px;
+    width: 600px;
+  }
+}
+
+.benefit-item {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.personal__claim {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.personal__claim button {
+  background-color: #ffc20f;
+  color: #000;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.personal__claim button:hover {
+  background-color: #fcd767;
+}
