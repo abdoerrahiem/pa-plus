@@ -86,13 +86,13 @@ export const Paket = ({
   const [errorModal, setErrorModal] = useState(false)
   const [isPopUp, setIsPopUp] = useState(true)
 
-  // useEffect(() => {
-  //   fetch('https://uatechannel.etiqa.co.id/api/pa_plus/plan')
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPaket(data)
-  //     })
-  // }, [])
+  useEffect(() => {
+    fetch('https://uatechannel.etiqa.co.id/api/pa_plus/plan')
+      .then((res) => res.json())
+      .then((data) => {
+        setPaket(data)
+      })
+  }, [])
 
   // <-- funtion get year -->
   let tgggl = formData.tgl_awal
@@ -147,68 +147,68 @@ export const Paket = ({
 
   const handleSubmit = async () => {
     setShowModal(true)
-    // if (type_paket !== '' && tanggalAwal !== '') {
-    //   try {
-    //     handleStart()
-    //     const res = await fetch(
-    //       'https://uatechannel.etiqa.co.id/api/pa_plus/quotes/calculate_premium',
-    //       //'https://buy.etiqa.co.id/api/pa_plus/quotes/calculate_premium',
-    //       {
-    //         method: 'POST',
-    //         headers: {
-    //           'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //           product_id: 'PA-P',
-    //           sum_insured_1: '1',
-    //           sum_insured_2: 0,
-    //           sum_insured_3: 0,
-    //           sum_insured_4: 0,
-    //           sum_insured_5: 0,
-    //           include_ext_cover_f: 0,
-    //           inception_date: tanggalAwal.toISOString().slice(0, 10),
-    //           coverage_id: 'ECHAN-PAP',
-    //           coverage_codes: [],
-    //           paplus_detail: {
-    //             occupation_id: null,
-    //             sum_insured_level: null,
-    //             gender: '',
-    //             birth_date: tanggalAwal.toISOString().slice(0, 10),
-    //             name: '',
-    //             id_number: null,
-    //             b_flag: 'true',
-    //             c_flag: 'true',
-    //             beneficiary_name: '',
-    //             beneficiary_contact: '',
-    //             plan_desc:
-    //               type_paket === 'PAPF1'
-    //                 ? 'Family Silver'
-    //                 : type_paket === 'PAPF2'
-    //                 ? 'Family Gold'
-    //                 : type_paket === 'PAPF3'
-    //                 ? 'Family Platinum'
-    //                 : type_paket === 'PAPI1'
-    //                 ? 'Individual Silver'
-    //                 : type_paket === 'PAPI2'
-    //                 ? 'Individual Gold'
-    //                 : 0,
-    //           },
-    //           plan: type_paket,
-    //         }),
-    //       }
-    //     )
-    //     const data = await res.json()
-    //     // console.log(data)
-    //     setPlanbiaya(data)
-    //     handleEnd()
-    //     handleOpen()
-    //   } catch (error) {
-    //     handleErrorOpen()
-    //     //handleClose()
-    //     //handleEnd()
-    //   }
-    // }
-    // //handleOpen()
+    if (type_paket !== '' && tanggalAwal !== '') {
+      try {
+        handleStart()
+        const res = await fetch(
+          'https://uatechannel.etiqa.co.id/api/pa_plus/quotes/calculate_premium',
+          // 'https://buy.etiqa.co.id/api/pa_plus/quotes/calculate_premium',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              product_id: 'PA-P',
+              sum_insured_1: '1',
+              sum_insured_2: 0,
+              sum_insured_3: 0,
+              sum_insured_4: 0,
+              sum_insured_5: 0,
+              include_ext_cover_f: 0,
+              inception_date: tanggalAwal.toISOString().slice(0, 10),
+              coverage_id: 'ECHAN-PAP',
+              coverage_codes: [],
+              paplus_detail: {
+                occupation_id: null,
+                sum_insured_level: null,
+                gender: '',
+                birth_date: tanggalAwal.toISOString().slice(0, 10),
+                name: '',
+                id_number: null,
+                b_flag: 'true',
+                c_flag: 'true',
+                beneficiary_name: '',
+                beneficiary_contact: '',
+                plan_desc:
+                  type_paket === 'PAPF1'
+                    ? 'Family Silver'
+                    : type_paket === 'PAPF2'
+                    ? 'Family Gold'
+                    : type_paket === 'PAPF3'
+                    ? 'Family Platinum'
+                    : type_paket === 'PAPI1'
+                    ? 'Individual Silver'
+                    : type_paket === 'PAPI2'
+                    ? 'Individual Gold'
+                    : 0,
+              },
+              plan: type_paket,
+            }),
+          }
+        )
+        const data = await res.json()
+        // console.log(data)
+        setPlanbiaya(data)
+        handleEnd()
+        handleOpen()
+      } catch (error) {
+        handleErrorOpen()
+        //handleClose()
+        //handleEnd()
+      }
+    }
+    //handleOpen()
   }
 
   const classes = useStyles()
@@ -247,11 +247,11 @@ export const Paket = ({
             <ArrowBackIcon /> <span>Batal</span>
           </button>
           <button
-            // disabled={
-            //   !type_paket ||
-            //   !tanggalAwal ||
-            //   (planbiaya && planbiaya.total_payable === 0)
-            // }
+            disabled={
+              !type_paket ||
+              !tanggalAwal ||
+              (planbiaya && planbiaya.total_payable === 0)
+            }
             onClick={() => {
               console.log(planbiaya)
               navigation.next()
@@ -401,7 +401,7 @@ export const Paket = ({
             </FormControl>
             <button
               className='buy-now-button'
-              // disabled={!type_paket || !type_sepeda || !tanggalAwal}
+              disabled={!type_paket || !type_sepeda || !tanggalAwal}
               onClick={handleSubmit}
             >
               <img src={require('../assets/btn_beli_normal.png')} alt='' />

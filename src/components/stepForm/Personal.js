@@ -191,46 +191,46 @@ export const Personal = ({
 
   const handleSubmit = async () => {
     navigation.next()
-    // try {
-    //   const res = await fetch('', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({
-    //       product_id: '1110',
-    //       sum_insured_1:
-    //         type_paket === 1 ? 25000 : type_paket === 2 ? 70000 : 0,
-    //       sum_insured_2: 0,
-    //       sum_insured_3: 0,
-    //       sum_insured_4: 0,
-    //       sum_insured_5: 0,
-    //       include_ext_cover_f: 0,
-    //       inception_date: tanggalAwal,
-    //       coverage_id: 'ECHAN-PAC',
-    //       cycling_detail: {
-    //         sum_insured_level: type_paket,
-    //         gender: '',
-    //         birth_date: tanggalAwal,
-    //         name: '',
-    //         id_number: null,
-    //         b_flag: 'true',
-    //         c_flag: 'true',
-    //         beneficiary_name: '',
-    //         beneficiary_contact: '',
-    //         cycling_brand: type_sepeda,
-    //       },
-    //       coverage_codes: [],
-    //     }),
-    //   })
+    try {
+      const res = await fetch('', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          product_id: '1110',
+          sum_insured_1:
+            type_paket === 1 ? 25000 : type_paket === 2 ? 70000 : 0,
+          sum_insured_2: 0,
+          sum_insured_3: 0,
+          sum_insured_4: 0,
+          sum_insured_5: 0,
+          include_ext_cover_f: 0,
+          inception_date: tanggalAwal,
+          coverage_id: 'ECHAN-PAC',
+          cycling_detail: {
+            sum_insured_level: type_paket,
+            gender: '',
+            birth_date: tanggalAwal,
+            name: '',
+            id_number: null,
+            b_flag: 'true',
+            c_flag: 'true',
+            beneficiary_name: '',
+            beneficiary_contact: '',
+            cycling_brand: type_sepeda,
+          },
+          coverage_codes: [],
+        }),
+      })
 
-    //   if (res.ok) {
-    //     navigation.next()
-    //   }
-    // } catch (error) {
-    //   handleErrorOpen()
-    //   console.log(error)
-    // }
+      if (res.ok) {
+        navigation.next()
+      }
+    } catch (error) {
+      handleErrorOpen()
+      console.log(error)
+    }
   }
 
   const handleBlur = (event, setError) => {
@@ -753,11 +753,11 @@ export const Personal = ({
             }}
             className='personal-grid-2'
           >
-            {/* <Ringkasan
+            <Ringkasan
               planbiaya={planbiaya}
               tanggalAwal={tanggalAwal}
               tanggalAkhir={tanggalAkhir}
-            /> */}
+            />
           </Grid>
         </Grid>
       </Container>

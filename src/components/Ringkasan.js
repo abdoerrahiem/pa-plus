@@ -20,7 +20,9 @@ export default function Ringkasan({ planbiaya, tanggalAwal, tanggalAkhir }) {
       <div>
         <div className='total-pembayaran'>
           <Typography>Total Pembayaran</Typography>
-          <Typography align='center'>Rp {convert(planbiaya.total_payable)},-</Typography>
+          <Typography align='center'>
+            Rp {convert(planbiaya.total_payable)},-
+          </Typography>
         </div>
         <div className='nilai-premi'>
           <Typography>Nilai Premi</Typography>
